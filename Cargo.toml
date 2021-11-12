@@ -1,0 +1,20 @@
+[package]
+name = "rust_cuby"
+version = "0.1.0"
+edition = "2018"
+resolver = "2"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+#bevy = { version = "0.5.0", features = ["dynamic"] }
+#bevy = { git = "https://github.com/bevyengine/bevy.git", branch = "pipelined-rendering", features = ["dynamic"] }
+bevy = { path = "../bevy", features = ["dynamic"] }
+wgpu = { version = "0.11.0", features = ["spirv"] }
+crevice = { path = "../bevy/crates/crevice", version = "0.6.0" }
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.dev]
+opt-level = 1
